@@ -1,34 +1,18 @@
 "use strict";
 const path = require('path');
-const loaders = [
-  {
-    test: /\.js/,
-    loaders: ['babel-loader'],
-    exclude: /node_modules/
-  }
-];
 
 module.exports = {
-  entry: {
-    app: [
-      './src/morse/index.js'
-    ]
-  },
-  target: 'node',
-  devtool: 'none',
+  entry: './src/morse/index.js',
   output: {
-    publicPath: '/',
-    path: path.join(__dirname, 'build'),
-    filename: 'morse.js'
-  },
-  resolve: {
-    extensions: ['.js'],
-    modules: [
-      path.join(__dirname, 'src'),
-      path.join(__dirname, 'node_modules')
-    ]
+    filename: 'morse.js',
+    path: path.resolve(__dirname, 'build')
   },
   module: {
-    loaders
-  }
+    loaders: [
+      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ }
+    ]
+  },
+
+  target: 'node'
+  
 };
