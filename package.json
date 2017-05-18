@@ -1,0 +1,33 @@
+{
+  "name": "resource-guru-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/utils.js",
+  "scripts": {
+    "test": "NODE_PATH=./src mocha --compilers js:babel-core/register --recursive \"./src/**/*.spec.@(js|jsx)\"",
+    "lint": "eslint --ext js src || exit 0",
+    "flow": "flow",
+    "flow-typed": "flow-typed install",
+    "build": "webpack -p --progress --profile --colors"
+  },
+  "author": "Djamel Hassaine",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "flow-bin": "^0.44.2",
+    "flow-typed": "^2.1.2",
+    "mocha": "^3.3.0"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}
